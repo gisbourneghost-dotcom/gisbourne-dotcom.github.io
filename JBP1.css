@@ -18,7 +18,7 @@ h1 {
 h2 {
     text-align: center;
     padding: 20px;
-    background-color: #FFFDD0; /* Cream */
+    background-color: rosybrown; /* Cream */
     color: black;
     margin-bottom: 20px;
     font-size: 24px;
@@ -27,7 +27,7 @@ h2 {
 h3 {
     text-align: center;
     padding: 70px;
-    background-color: #87CEFA; /* Light blue */
+    background-color: dodgerblue; /* Light blue */
     color: white;
     margin-bottom: 20px;
     font-size: 30px;
@@ -37,7 +37,7 @@ h3 {
 .product {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -116,4 +116,5 @@ input[type="text"], select {
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+
 }
