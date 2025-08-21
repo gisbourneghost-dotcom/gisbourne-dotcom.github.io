@@ -37,7 +37,7 @@ h3 {
 .product {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -118,6 +118,7 @@ input[type="text"], select {
     border-radius: 4px;
 
 }
+
 
 
 
