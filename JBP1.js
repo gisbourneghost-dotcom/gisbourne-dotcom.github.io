@@ -40,7 +40,7 @@ fetch(sheetURL)
                 <div class="product-info">
                     <p>${name}</p>
                     <p>Brand: ${brand}</p>
-                    <p>Price: ${price} Shillings</p>
+                    <p>Price: ${price} TZS</p>
                 </div>
                 <div class="product-select">
                     <label>
@@ -110,3 +110,4 @@ confirmBtn.addEventListener('click', () => {
     console.log(`Order confirmed! Message sent to WhatsApp.`);
 
 });
+
