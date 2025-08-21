@@ -1,0 +1,119 @@
+/* General Page Styling */
+body {
+    font-family: 'Amazon Ember', Arial, sans-serif;
+    margin: 10px;
+    padding: 30px;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1 {
+    text-align: left;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    margin-top: 0px;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFFDD0; /* Cream */
+    color: black;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+h3 {
+    text-align: center;
+    padding: 70px;
+    background-color: #87CEFA; /* Light blue */
+    color: white;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+/* Product Container */
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Image */
+.product-image img {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Info */
+.product-info {
+    flex: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.product-info h2 {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+
+/* Checkbox */
+.product-select {
+    flex: 1;
+    text-align: right;
+}
+
+/* Button Center */
+.btn-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #FFD814;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid #FCD200;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Amazon Ember', Arial, sans-serif;
+}
+
+button:hover {
+    background-color: #F7CA00;
+}
+
+/* Checkout */
+#checkout, #confirmation {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

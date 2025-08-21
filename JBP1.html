@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="JBP1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jubilate Beauty Point</title>
+</head>
+
+<body>
+    <h1>Jubilate Beauty Point</h1>
+
+    <h2>Shop now urembo na vifaa vya urembo Tanzania Dar es Salaam. 
+        Order and delivery ni popote jijini Dar es Salaam.
+    </h2>
+    
+    <h3>OUR PRODUCTS</h3>
+	
+    <div id="products"></div> 
+
+    <!-- Button centered -->
+    <div class="btn-container">
+        <button id="buyBtn">Buy Selected Products</button>
+    </div>
+
+    <!-- Checkout section -->
+    <div id="checkout" style="display:none;">
+        <h2>Checkout</h2>
+        <p id="totalPrice"></p>
+        <label>Phone Number:</label>
+        <input type="text" id="phone"><br><br>
+        <label>Delivery Location:</label>
+        <input type="text" id="location"><br><br>
+        <label>Payment Method:</label>
+        <select id="payment">
+            <option value="shillings">Shillings</option>
+            <option value="crypto">Crypto</option>
+        </select><br><br>
+        <button id="confirmBtn">Confirm Purchase</button>
+    </div>
+
+    <!-- Confirmation -->
+    <div id="confirmation" style="display:none;">
+        <h2>Thank you for your purchase!</h2>
+        <p>Your order has been placed successfully.</p>
+    </div>
+
+    <script src="JBP1.js"></script>
+</body>
+</html>
