@@ -38,7 +38,7 @@ fetch(sheetURL)
                     <img src="${image}" alt="${name}">
                 </div>
                 <div class="product-info">
-                    <h2>${name}</h2>
+                    <p>${name}</p>
                     <p>Brand: ${brand}</p>
                     <p>Price: ${price} Shillings</p>
                 </div>
@@ -108,4 +108,5 @@ confirmBtn.addEventListener('click', () => {
     confirmationSection.style.display = 'block';
 
     console.log(`Order confirmed! Message sent to WhatsApp.`);
+
 });
