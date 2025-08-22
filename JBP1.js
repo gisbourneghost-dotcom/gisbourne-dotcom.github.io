@@ -12,6 +12,39 @@ const confirmationSection = document.getElementById('confirmation');
 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSPOsmot1IwJICuFiVMfCbQb66XN98z9nnpsNAS5Y01GrJOjsqSEyPEeE2DOYOCeq6UnsdY6syJ397J/pub?output=csv";
 
 // ==============================
+// STEP 1.5: Helper function to fix image links
+// ==============================
+function toDirectImageURL(url) {
+    if (!url) return '';
+    url = url.trim().replace(/^"|"$/g, ''); // remove quotes if they exist
+
+    // Google Drive → direct link
+    if (url.includes('drive.google.com')) {
+        const idMatch = url.match(/\/d\/([^/]+)/) || url.match(/[?&]id=([^&]+)/);
+        if (idMatch && idMatch[1]) {
+            return `https://drive.google.com/uc?export=view&id=${idMatch[1]}`;
+        }
+    }
+
+    // Dropbox → direct link
+    if (url.includes('dropbox.com')) {
+        return url
+            .replace('www.dropbox.com', 'dl.dropboxusercontent.com')
+            .replace('?dl=0', '');
+    }
+
+    // GitHub → raw file
+    if (url.includes('github.com') && url.includes('/blob/')) {
+        return url
+            .replace('github.com/', 'raw.githubusercontent.com/')
+            .replace('/blob/', '/');
+    }
+
+    // Return as-is if already direct
+    return url;
+}
+
+// ==============================
 // STEP 2: Load products from Google Sheet
 // ==============================
 fetch(sheetURL)
@@ -20,10 +53,11 @@ fetch(sheetURL)
         const rows = data.trim().split("\n").slice(1); // Skip header row
 
         rows.forEach(row => {
-            // ✅ FIXED: safer CSV split (ignores commas inside quotes)
+            // ✅ Safer CSV split (ignores commas inside quotes)
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
 
-            const image = cols[0]?.replace(/"/g, "");
+            // ✅ Convert bad links to direct links
+            const image = toDirectImageURL(cols[0]?.replace(/"/g, ""));
             const name = cols[1]?.replace(/"/g, "");
             const brand = cols[2]?.replace(/"/g, "");
             const price = cols[3]?.replace(/"/g, "");
@@ -35,12 +69,14 @@ fetch(sheetURL)
 
             productDiv.innerHTML = `
                 <div class="product-image">
-                    <img src="${image}" alt="${name}">
+                    <img src="${image}" alt="${name}" loading="lazy"
+                         referrerpolicy="no-referrer"
+                         onerror="this.onerror=null; this.src='https://via.placeholder.com/150?text=No+Image';">
                 </div>
                 <div class="product-info">
                     <p>${name}</p>
                     <p>Brand: ${brand}</p>
-                    <p>Price: ${price} TZS</p>
+                    <p>Price: ${price} Shillings</p>
                 </div>
                 <div class="product-select">
                     <label>
@@ -108,6 +144,4 @@ confirmBtn.addEventListener('click', () => {
     confirmationSection.style.display = 'block';
 
     console.log(`Order confirmed! Message sent to WhatsApp.`);
-
 });
-
