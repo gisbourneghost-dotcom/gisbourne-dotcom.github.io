@@ -53,7 +53,9 @@ h3 {
 .product-image img {
     width: 100px;
     height: auto;
+    border-radius:cover;
     border-radius: 5px;
+    display:block;
 }
 
 /* Info */
@@ -118,6 +120,7 @@ input[type="text"], select {
     border-radius: 4px;
 
 }
+
 
 
 
