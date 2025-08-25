@@ -51,7 +51,7 @@ h3 {
 
 /* Image */
 .product-image img {
-    width: 150px;
+    width: 100px;
     height: auto;
     border-radius: 5px;
 }
@@ -118,6 +118,7 @@ input[type="text"], select {
     border-radius: 4px;
 
 }
+
 
 
 
